@@ -25,6 +25,7 @@
                                 <div class="col-8">
                                     <p class="login-box-msg">Registrar Usuario</p>
                                     <form action="../Business/Configuracion.php" method="POST">
+
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" placeholder="Nombre de Usuario" id="txtNombreUsuario" name="txtNombreUsuario" maxlength="20" required>
                                             <div class="input-group-append">
@@ -42,7 +43,7 @@
                                             </div>
                                         </div>
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Segundo Nombre" id="txtSegundoNombre" name="txtSegundoNombre" maxlength="20" required>
+                                            <input type="text" class="form-control" placeholder="Segundo Nombre" id="txtSegundoNombre" name="txtSegundoNombre" maxlength="20">
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
                                                     <span class="fas fa-user"></span>
@@ -58,23 +59,15 @@
                                             </div>
                                         </div>
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Segundo Apellido" id="txtSegundoApellido" name="txtSegundoApellido" maxlength="20" required>
+                                            <input type="text" class="form-control" placeholder="Segundo Apellido" id="txtSegundoApellido" name="txtSegundoApellido" maxlength="20">
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
                                                     <span class="fas fa-user"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                       
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Segundo Nombre" id="txtSegundoNombre" name="txtSegundoNombre" maxlength="20" required>
-                                            <div class="input-group-append">
-                                                <div class="input-group-text">
-                                                    <span class="fas fa-user"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-group mb-3">
-
                                             <input type="email" class="form-control" placeholder="email" id="txtEmail" name="txtEmail" maxlength="45" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
@@ -82,8 +75,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                         <div class="input-group mb-3">
 
+                                         <div class="input-group mb-3">
                                             <input type="Identificacion" class="form-control" placeholder="Identificacion" id="txtIdentificaion" name="txtIdentificaion" maxlength="45" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
@@ -91,8 +84,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                         <div class="input-group mb-3">
 
+                                         <div class="input-group mb-3">
                                             <input type="Celular" class="form-control" placeholder="Celular" id="txtCelular" name="txtCelular" maxlength="45" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
@@ -101,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="input-group mb-3">
-                                        <textarea class="form-control" rows="3" placeholder="Dirección" id="txtDireccion" name="txtDireccion" maxlength="45" required></textarea>
+                                        <textarea class="form-control" rows="3" placeholder="Dirección" id="txtDireccion" name="txtDireccion" maxlength="45"></textarea>
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
                                                     <span class="fas fa-taxi"></span>
@@ -109,16 +102,17 @@
                                             </div>
                                         </div>
                                         <div class="input-group mb-3">
-                                        <input type="password" class="form-control" placeholder=" Contraseña" id="txtContraseña"name="txtContraseña">
+                                        <input type="password" class="form-control" placeholder=" Contraseña" id="txtContraseña"name="txtContraseña" maxlength="45" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                             <span class="fas fa-lock"></span>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group">
                                     <label>Perfil</label>
-                                    <select class="form-control select2" style="width: 100%; "name="cmbPerfil" id="cmbPerfil">
+                                    <select class="form-control select2" style="width: 100%; "name="cmbPerfil" id="cmbPerfil" required>
                             
                                         <option value ="0" selected="selected">seleccione una Opción</option>
                                         <option value ="1">Iventario</option>
