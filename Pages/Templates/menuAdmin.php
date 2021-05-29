@@ -70,18 +70,7 @@
         </p> 
     </a>
     <ul class="nav nav-treeview">
-        <li class="nav-item">
-        <a href="?op=Rclient" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Registrar</p>
-        </a>
-        </i>
-        <li class="nav-item">
-        <a href="?op=Cclient" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Consultar</p>
-        </a>
-        </i>
+        
         <li class="nav-item">
         <a href="?op=Aclient" class="nav-link">
          <i class="far fa-circle nav-icon"></i>
@@ -89,37 +78,7 @@
         </a>
         </li>
     </ul>     
-    </li>  
-
-      <li class="nav-item">
-     <a href="#" class="nav-link">
-       <i class="nav-icon fas  fa-cubes"></i>
-       <p>
-        Proveedores
-        <i class="right fas fa-angle-left"></i>
-        </p> 
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item">
-        <a href="?op=Rvendors" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Registrar</p>
-        </a>
-        </i>
-        <li class="nav-item">
-        <a href="?op=Cvendors" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Consultar</p>
-        </a>
-        </i>
-        <li class="nav-item">
-        <a href="?op=Avendors" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Actualizar</p>
-        </a>
-        </li>
-    </ul>     
-    </li>   
+    </li>     
     
     
     <li class="nav-item">
@@ -131,30 +90,15 @@
         </p> 
     </a>
     <ul class="nav nav-treeview">
-        <li class="nav-item">
-        <a href="?op=Rsales" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Registrar</p>
-        </a>
-        </i>
-        <li class="nav-item">
-        <a href="?op=Csales" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Consultar</p>
-        </a>
-        </i>
+        
+        
         <li class="nav-item">
         <a href="?op=Asales" class="nav-link">
          <i class="far fa-circle nav-icon"></i>
          <p>Actualizar</p>
         </a>
         </li>
-        <li class="nav-item">
-        <a href="?op=Resales" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Reportes</p>
-        </a>
-        </li>
+        
 
     </ul>     
     </li>
@@ -168,30 +112,14 @@
         </p> 
     </a>
     <ul class="nav nav-treeview">
-        <li class="nav-item">
-        <a href="?op=Rpurchases" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Registrar</p>
-        </a>
-        </i>
-        <li class="nav-item">
-        <a href="?op=Cpurchases" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Consultar</p>
-        </a>
-        </i>
+      
         <li class="nav-item">
         <a href="?op=Apurchases" class="nav-link">
          <i class="far fa-circle nav-icon"></i>
          <p>Actualizar</p>
         </a>
         </li>
-        <li class="nav-item">
-        <a href="?op=Repurchases" class="nav-link">
-         <i class="far fa-circle nav-icon"></i>
-         <p>Reportes</p>
-        </a>
-        </li>
+       
     </ul>     
     </li>
 

@@ -20,7 +20,7 @@
 
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav_link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </i>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="../home/" class="nav-link">Home</a>
@@ -63,13 +63,43 @@
         </div>
     </div>    
     <?php include_once('../Templates/menuSuperUsuario.php'); ?>
-
+    </aside>
+    <div class="wrapper">
         <div class="content-wrapper">
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-2">
                         </div>
+                        
+                        <?php
+                        if(isset($_GET['MsgType'])){
+                            $tipoMensaje = $_GET['MsgType'];
+                            $mensaje = isset($_GET['MsgValue']) ? $_GET['MsgValue'] : "";
+                            if($tipoMensaje === "Err")
+                            {
+                                echo "<div class='alert alert-danger alert-dismissible  container-fluid'>
+                                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                                <h5><i class='icon fas fa-ban'></i> Alert!</h5>".$mensaje."</div>";
+                            
+
+                            }
+                            if($tipoMensaje === "Ext")
+                            {
+                                echo "<div class='alert alert-success alert-dismissible container-fluid'>
+                                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                                <h5><i class=icon fas fa-check'></i> Alert!</h5>".$mensaje."</div>";
+                            }
+
+                        }
+                        if(isset($_GET['op'])){
+                            $opcion = $_GET['op'];
+                            if($opcion == "Ruser"){
+                                include_once('../Usuarios/Registrar.php');
+                            }
+                        }
+
+                        ?>
                        
                         <div class="col-2">
 

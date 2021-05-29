@@ -6,7 +6,7 @@
                                 </div>
                                 <div class="col-8">
                                     <p class="login-box-msg">Registrar Usuario</p>
-                                    <form action="../Business/Configuracion.php" method="POST">
+                                    <form action="../../Negocio/Usuarios.php" method="POST">
 
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" placeholder="Nombre de Usuario" id="txtNombreUsuario" name="txtNombreUsuario" maxlength="20" required>
@@ -59,7 +59,7 @@
                                         </div>
 
                                          <div class="input-group mb-3">
-                                            <input type="Identificacion" class="form-control" placeholder="Identificacion" id="txtIdentificaion" name="txtIdentificaion" maxlength="45" required>
+                                            <input type="Identificacion" class="form-control" placeholder="Identificacion" id="txtIdentificaion" name="txtIdentificacion" maxlength="45" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
                                                     <span class="fas fa-credit-card"></span>
@@ -112,6 +112,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <button type="submit" class="btn btn-warning btn-block">Registrar</button>
+                                                <input type="hidden" id="txtOperacion" name="txtOperacion" value="Registrar"> 
                                             </div>
                                             <div class="col-3">
 

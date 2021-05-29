@@ -5,7 +5,7 @@ class clsUsuarioEntidad
     private $NombreUsuario, $PrimerNombre, $SegundoNombre, $PrimerApellido,
             $SegundoApellido, $Email, $Identificacion, $Direccion,
             $Celular, $perfilUsuario, $PassUsuario, $EstadoUsuario,
-            $FechaCreacion, $UsuarioModificacion, $FechaModificacion, $objClsEncript;
+            $UsuarioCreacion, $FechaCreacion, $UsuarioModificacion, $FechaModificacion, $objClsEncript;
 
   public function __construct()
     {
@@ -73,7 +73,16 @@ class clsUsuarioEntidad
     }
     public function setearUsuarioCreacion($value)
     {
-        $this->UsuarioCreacion= trim($value);
+        if(is_null($this->UsuarioCreacion) || !isset($this->UsuarioCreacion) || (strlen($value) <= 0))
+        {
+           $this->UsuarioCreacion = "system";
+     
+        }
+        else
+        {
+            $this->UsuarioCreacion= trim($value);
+        }
+              
     }
     public function setearFechaCreacion($value)
     {
@@ -88,7 +97,82 @@ class clsUsuarioEntidad
         $this->FechaModificacion = trim($value);
     }
 
+    public function obtenerNombreUsuario()
+    {
+        return $this->NombreUsuario;
+    }
+    public function obtenerPrimerNombre()
+    {
+        return $this->PrimerNombre;
+    }
+    public function obtenerSegundoNombre()
+    {
+        return $this->SegundoNombre;
+    }
+    public function obtenerPrimerApellido()
+    {
+        return $this->PrimerApellido;
+    }
+    public function obtenerSegundoApellido()
+    {
+        return $this->SegundoApellido;
+    }
+    public function obtenerEmail()
+    {
+        return $this->Email;
+    }
+    public function obtenerIdentificacion()
+    {
+        return $this->Identificacion;
+    }
+    public function obtenerDireccion()
+    {
+        return $this->Direccion;
+    }
+    public function obtenerCelular()
+    {
+        return $this->NombreUsuario;
+    }
+    public function obtenerPerfilUsuario()
+    {
+        return $this->PerfilUsuario;
+    }
+    public function obtenerpassUsuario()
+    {
+        return $this->PassUsuario;
+    }
+    public function obtenerEstadoUsuario()
+    {
+        return $this->EstadoUsuario;
+    }
+    public function obtenerUsuarioCreacion()
+    {
+        if(is_null($this->UsuarioCreacion) || !isset($this->UsuarioCreacion) || (strlen($UsuarioCreacion) <= 0))
+        {
+           return "system";
+     
+        }
+        else
+        {
+            return $this->UsuarioCreacion;
+        }
 
+
+        
+    }
+    public function obtenerFechaCreacion()
+    {
+        return $this->FechaCreacion;
+    }
+    public function obtenerUsuarioModificacion()
+    {
+        return $this->UsuarioModificacion;
+    }
+    public function obtenerFechaModificacion()
+    {
+        return $this->FechaModificacion;
+    }
+    
     
 
 
