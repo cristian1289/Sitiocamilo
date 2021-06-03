@@ -73,7 +73,7 @@ class clsUsuarioEntidad
     }
     public function setearUsuarioCreacion($value)
     {
-        if(is_null($this->UsuarioCreacion) || !isset($this->UsuarioCreacion) || (strlen($value) <= 0))
+        if(is_null($this->value) || !isset($this->value) || (strlen($value) <= 0))
         {
            $this->UsuarioCreacion = "system";
      
