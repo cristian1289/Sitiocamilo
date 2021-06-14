@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sitio camilo | Registrar Usuario</title>
     <?php
+    include_once('../../Negocio/caduca.php');
     include_once('../Templates/head.php');
     ?>
 </head>
@@ -38,7 +39,7 @@
     
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <a href="../home/" class="brand-link">
-        <img src="../../images/descarga.ico" alt="AdminLte Logo" class="brand-image img-circle elevation-3" style="opacity: . 8">
+        <img src="../../images/descarga.ico" alt="AdminLte Logo" class="brand-image img-circle elevation-3" style="opacity:8">
         <span class="brand-text font-weight-light">Sitio camilo</span>
         </a>
     <div class="sidebar">
@@ -62,7 +63,35 @@
             </div>
         </div>
     </div>    
-    <?php include_once('../Templates/menuSuperUsuario.php'); ?>
+    <?php 
+    
+    if(isset($_SESSION['Perfil']))
+    {
+        if($_SESSION['Perfil'] === '1')
+        {
+        include_once('../Templates/menuInventario.php');
+        } 
+        elseif($_SESSION['Perfil'] === '2')
+        {
+        include_once('../Templates/menuVendedor.php');
+        } 
+        elseif($_SESSION['Perfil'] === '3')
+        {
+        include_once('../Templates/menuSuperUsuario.php');
+        } 
+        elseif($_SESSION['Perfil'] === '4')
+        {
+        include_once('../Templates/menuAdmin.php');
+        } 
+    }
+        else 
+        {
+            header('Location:../../');
+        } 
+    
+    
+    ?>
+    </div>
     </aside>
     <div class="wrapper">
         <div class="content-wrapper">
@@ -80,7 +109,7 @@
                             {
                                 echo "<div class='alert alert-danger alert-dismissible  container-fluid'>
                                 <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                                <h5><i class='icon fas fa-ban'></i> Alert!</h5>".$mensaje."</div>";
+                                <h5><i class='icon fas fa-ban'></i> Error!</h5>".$mensaje."</div>";
                             
 
                             }
@@ -88,16 +117,45 @@
                             {
                                 echo "<div class='alert alert-success alert-dismissible container-fluid'>
                                 <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                                <h5><i class=icon fas fa-check'></i> Alert!</h5>".$mensaje."</div>";
+                                <h5><i class=icon fas fa-check'></i> Operación exitosa!</h5>".$mensaje."</div>";
                             }
 
                         }
-                        if(isset($_GET['op'])){
+                        
+                        if (isset($_GET['op'])) {
                             $opcion = $_GET['op'];
-                            if($opcion == "Ruser"){
+                            if ($opcion === "Ruser"){
                                 include_once('../Usuarios/Registrar.php');
                             }
+                            else if ($opcion === "Cuser"){
+                                include_once('../Usuarios/Listar.php');
+                            }
+                            else if ($opcion === "Rproducts"){
+                                include_once('../Productos/Registrar.php');
+                            }
+                            else if ($opcion === "Cproducts"){
+                                include_once('../Productos/Listar.php');
+                            }
+                            else if ($opcion === "Rclient"){
+                                include_once('../Terceros/Registrar.php');
+                            }
+                            else if ($opcion === "Cclient"){
+                                include_once('../Terceros/Listar.php');
+                            }
+                            else if ($opcion === "Rvendors"){
+                                include_once('../Terceros/Registrar.php');
+                            }
+                            else if ($opcion === "Cvendors"){
+                                include_once('../Terceros/Listar.php');
+                            }
+                            else if ($opcion === "EndSesion"){
+                                session_destroy();
+                                
+                                
+                            }
+                            
                         }
+                    
 
                         ?>
                        

@@ -20,14 +20,26 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="index.html" class="h1"><b>Sitio</b>camilo</a>
+      <a href="index.php" class="h1"><b>Sitio</b>camilo</a>
     </div>
+    <?php
+    if(isset($_GET['MsgType']))
+    {
+      $tipoMensaje = $_GET['MsgType'];
+      $mensaje = isset($_GET['MsgValue']) ? $_GET['MsgValue'] : "";
+      if($tipoMensaje === "Err") {
+        echo "<div class='alert alert-danger alert-dismissible  container-fluid'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <h5><i class='icon fas fa-ban'></i> Error!</h5>".$mensaje."</div>";
+    }
+  }
+    ?>
     <div class="card-body">
       <p class="login-box-msg">Presiona aceptar para iniciar sesión</p>
 
-      <form action="index3.html" method="post">
+      <form action="Negocio/Usuarios.php" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Usuario">
+          <input type="text" class="form-control" placeholder="Usuario" id="txtUsuario" name="txtUsuario">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -35,7 +47,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" id="txtPassword" name="txtPassword">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -49,6 +61,7 @@
           <!-- /.col -->
           <div class="col-12">
             <button type="submit" class="btn btn-primary btn-block">Aceptar</button>
+            <input type="hidden" id="txtOperacion" name="txtOperacion" value="Login">
           </div>
           <!-- /.col -->
         </div>

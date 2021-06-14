@@ -202,14 +202,16 @@
         Perfil
         </p> 
     </a>
+    </li>
 
      <li class="nav-item">
      <a href="?op=EndSesion" class="nav-link">
        <i class="nav-icon fas fa-power-off "></i>
-       <p>
+        <p>
         Cerrar Sesión
         </p> 
     </a>
+    </li>
     
     </ul> 
 </nav>

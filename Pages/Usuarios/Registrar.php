@@ -59,7 +59,7 @@
                                         </div>
 
                                          <div class="input-group mb-3">
-                                            <input type="Identificacion" class="form-control" placeholder="Identificacion" id="txtIdentificaion" name="txtIdentificacion" maxlength="45" required>
+                                            <input type="number" class="form-control" placeholder="Identificacion" id="txtIdentificaion" name="txtIdentificacion" maxlength="45" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
                                                     <span class="fas fa-credit-card"></span>
@@ -68,7 +68,7 @@
                                         </div>
 
                                          <div class="input-group mb-3">
-                                            <input type="Celular" class="form-control" placeholder="Celular" id="txtCelular" name="txtCelular" maxlength="45" required>
+                                            <input type="number" class="form-control" placeholder="Celular" id="txtCelular" name="txtCelular" maxlength="45" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
                                                     <span class="fas fa-phone"></span>
@@ -96,7 +96,7 @@
                                     <label>Perfil</label>
                                     <select class="form-control select2" style="width: 100%; "name="cmbPerfil" id="cmbPerfil" required>
                             
-                                        <option value ="0" selected="selected">seleccione una Opción</option>
+                                        <option value ="0">seleccione una Opción</option>
                                         <option value ="1">Iventario</option>
                                         <option value ="2">Vendedor</option>
                                         <option value ="3">Super Usuario</option>

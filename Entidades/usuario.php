@@ -55,6 +55,10 @@ class clsUsuarioEntidad
     {
         $this->PerfilUsuario = trim($value);
     }
+    public function setearcmbPerfil($value)
+    {
+        $this->cmbPerfil = trim($value);
+    }
     public function setearPassUsuario($value)
     {
         if(is_null($value) || !isset($value) || (strlen($value) <= 0))
@@ -131,11 +135,15 @@ class clsUsuarioEntidad
     }
     public function obtenerCelular()
     {
-        return $this->NombreUsuario;
+        return $this->Celular;
     }
     public function obtenerPerfilUsuario()
     {
-        return $this->PerfilUsuario;
+        return $this->perfilUsuario;
+    }
+    public function obtenercmbPerfil()
+    {
+        return $this->cmbPerfil;
     }
     public function obtenerpassUsuario()
     {
@@ -147,7 +155,7 @@ class clsUsuarioEntidad
     }
     public function obtenerUsuarioCreacion()
     {
-        if(is_null($this->UsuarioCreacion) || !isset($this->UsuarioCreacion) || (strlen($UsuarioCreacion) <= 0))
+        if(is_null($this->UsuarioCreacion) || !isset($this->UsuarioCreacion) || (strlen($this->UsuarioCreacion) <= 0))
         {
            return "system";
      

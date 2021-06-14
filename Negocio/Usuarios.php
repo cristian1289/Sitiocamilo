@@ -4,6 +4,7 @@ include_once('../Datos/usuariosData.php');
 if(isset($_POST['txtOperacion'])) {
     $operacion = $_POST['txtOperacion'];
     if ($operacion === "Registrar") {
+
         $objClsUsuariosData = new clsUsuariosData();
         if($objClsUsuariosData->registrarUsuario(obtenerDatosFormulario()))
         {
@@ -14,6 +15,38 @@ if(isset($_POST['txtOperacion'])) {
             {
                 EnviarMensajeError();
             }
+    }
+    else if($operacion === "Login"){
+
+        $objClsUsuariosData = new clsUsuariosData();
+        $objClsUsuarioEntidad = new clsUsuarioEntidad();
+        if (isset($_POST['txtUsuario'])){
+            $objClsUsuarioEntidad->setearNombreUsuario($_POST['txtUsuario']);
+            if (isset($_POST['txtPassword'])){
+                $objClsUsuarioEntidad->setearPassUsuario($_POST['txtPassword']);
+                $resultado = $objClsUsuariosData->autenticarUsuario($objClsUsuarioEntidad);
+                if(!$resultado)
+                {
+                    $mensaje = "Verifica los datos...</br>intenta nuevamente.";
+                    header('Location:../?MsgType=Err&MsgValue=' . urlencode($mensaje));
+
+                }else
+                {
+                    $mensaje = "Bienvenido a sitio camilo";
+                    $resultado[0];
+                    session_start();
+                    $_SESSION['Perfil'] = $resultado[0];
+                    $_SESSION['Tiempo'] = time();
+                    header('Location:../pages/home/?MsgType=Ext&MsgValue=' . urlencode($mensaje));
+                   
+                }
+                
+            } else{
+                EnviarMensajeError();
+            } 
+        } else{
+            EnviarMensajeError();
+        }      
     }
 }
 else
@@ -61,7 +94,8 @@ function obtenerDatosFormulario()
                                             echo"10";
                                             $objClsUsuarioEntidad->setearPassUsuario($_POST['txtContraseña']);
                                             if (isset($_POST['cmbPerfil'])){
-                                                $objClsUsuarioEntidad->setearPerfilUsuario($_POST['cmbPerfil']);
+                                                echo"11";
+                                                $objClsUsuarioEntidad->setearcmbPerfil($_POST['cmbPerfil']);
                                                  return $objClsUsuarioEntidad;
                                             } else{
                                                 EnviarMensajeError();

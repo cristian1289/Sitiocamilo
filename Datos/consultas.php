@@ -29,6 +29,24 @@ class clsConsultas
        
         return $this->objConexion;
     }
+    public function cargarDatos($sql)
+    {
+        $conexion=$this->objConexion->conectar();
+        $result=$conexion->query($sql);
+        $filas=mysqli_num_rows($result);
+        if($filas>0) {
+            $resultado=mysqli_fetch_array($result);
+
+        }
+        else
+        {
+            $resultado=false;
+
+        }
+        $this->objConexion->desconectar($conexion);
+        return $resultado;
+
+    }
 }
 
 
